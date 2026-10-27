@@ -1,16 +1,14 @@
 from abc import ABC
-from dataclasses import dataclass
 from collections.abc import Mapping, Sequence
 from typing import TypeVar, NamedTuple,Optional
 
 S = TypeVar('S') #state type(e.g, str, int, custom object)
 A = TypeVar('A') #action type(e.g, str or int)
 
-@dataclass
 class TransitionOutcome(NamedTuple):
     probability: float
     next_state: S
-    reward: float
+    reward: float 
     is_terminal: bool
 
 #reward input types 
